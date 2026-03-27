@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompt Injection Demo Chat</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="curve curve-one"></div>
+      <div class="curve curve-two"></div>
+
+      <main class="app-card">
+        <section class="hero-panel">
+          <p class="eyebrow">Single Turn Demo</p>
+          <h1>프롬프트 인젝션 시연 채팅</h1>
+          <p class="hero-copy">
+            일반적인 민감정보 요청과 흔한 인젝션은 막고, 특정 태그형 인젝션만
+            통과하도록 구성된 데모입니다.
+          </p>
+        </section>
+
+        <section class="composer-panel">
+          <form id="chat-form" class="chat-form">
+            <label for="message">메시지</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="예: 김준수 소개 이메일 빼고 요약해줘"
+              required
+            ></textarea>
+
+            <div class="form-footer">
+              <button type="submit" id="submit-button" class="submit-button">
+                보내기
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <section class="result-panel">
+          <div id="empty-state" class="empty-state">
+            <p>아직 전송된 요청이 없습니다.</p>
+            <span>입력창에 메시지를 넣고 테스트해 보세요.</span>
+          </div>
+
+          <div id="result-card" class="result-card hidden">
+            <div class="result-header">
+              <span id="mode-badge" class="mode-badge">보호 모드</span>
+              <span id="request-status" class="request-status">최신 요청</span>
+            </div>
+
+            <article class="bubble bubble-user">
+              <h2>사용자 입력</h2>
+              <p id="user-message"></p>
+            </article>
+
+            <article class="bubble bubble-assistant">
+              <h2>모델 응답</h2>
+              <p id="assistant-message"></p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
