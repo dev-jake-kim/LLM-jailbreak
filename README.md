@@ -21,7 +21,7 @@
 예시 (환경에 맞게 실행):
 
 ```bash
-OLLAMA_HOST=0.0.0.0:80 ollama serve
+OLLAMA_HOST=0.0.0.0:512 ollama serve
 ```
 
 ## 2. 실행 방법
@@ -36,7 +36,8 @@ uv run main.py \
 ## 3. 웹 채팅 실행
 
 ```bash
-uv run uvicorn webapp:app --reload
+sudo ls #(권한 주기용)
+nohup sudo uv run uvicorn webapp:app --host 0.0.0.0 --port 80&
 ```
 
 브라우저에서 `http://127.0.0.1:8000`을 열면 됩니다.

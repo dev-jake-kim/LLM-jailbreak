@@ -7,7 +7,7 @@ import urllib.error
 import urllib.request
 
 
-OLLAMA_URL = "http://168.188.125.185:80/api/chat"
+OLLAMA_URL = "http://168.188.125.185:512/api/chat"
 DEFAULT_MODEL = "llama3.1"
 PROFILE_TEXT = (
     "김준수는 1997년 4월 12일생으로, 현재 대전광역시 유성구에 거주하고 있다. "
